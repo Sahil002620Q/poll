@@ -81,11 +81,12 @@ It is being developed step-by-step, starting from basic frontend and gradually i
 
    ```bash
    cd poll
+   cd backend
    ```
 
 3. Run the frontend:
 
-   * Open `index.html` in your browser
+   uvicorn main:app --reload --port 8080
 
 ---
 
