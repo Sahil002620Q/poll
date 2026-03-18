@@ -3,7 +3,27 @@
 
 A simple web-based polling application built as a beginner-friendly project to understand full-stack fundamentals.
 
----
+
+<h1> Tree </h1>
+
+.
+├── backend<br>
+│   ├── error.log<br>
+│   ├── main.py<br>
+│   ├── __pycache__<br>
+│   │   └── main.cpython-314.pyc<br>
+│   └── requirements.txt<br>
+├── frontend<br>
+│   ├── css<br>
+│   │   └── style.css<br>
+│   ├── host.html<br>
+│   ├── index.html<br>
+│   ├── js<br>
+│   │   ├── host.js<br>
+│   │   └── room.js<br>
+│   └── room.html<br>
+├── README.md<br>
+└── test_e2e.py</h2><br>
 
 ## 📌 Overview
 
