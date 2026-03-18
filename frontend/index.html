@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votee - Real-Time Polling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Votee</h1>
+            <p>Real-time polling and chat made easy.</p>
+        </header>
+        
+        <main class="card index-card">
+            <div class="action-section">
+                <h2>Host a Room</h2>
+                <p>Create questions, set timers, and see live results.</p>
+                <button id="btn-host" class="btn primary">Create Room</button>
+            </div>
+            
+            <div class="divider"><span>OR</span></div>
+            
+            <div class="action-section">
+                <h2>Join a Room</h2>
+                <p>Enter a code to vote and chat instantly.</p>
+                <input type="text" id="input-room-code" placeholder="6-digit code" maxlength="6">
+                <input type="text" id="input-username" placeholder="Your name">
+                <button id="btn-join" class="btn secondary">Join Room</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const API_URL = "";
+
+        document.getElementById('btn-host').addEventListener('click', async () => {
+            try {
+                const res = await fetch(`${API_URL}/create_room`, { method: 'POST' });
+                const data = await res.json();
+                window.location.href = `host.html?room=${data.room_code}`;
+            } catch (err) {
+                alert("Failed to create room. Ensure backend is running.");
+                console.error(err);
+            }
+        });
+
+        document.getElementById('btn-join').addEventListener('click', async () => {
+            const code = document.getElementById('input-room-code').value.trim();
+            const name = document.getElementById('input-username').value.trim();
+            if (code.length === 6 && name) {
+                try {
+                    const res = await fetch(`${API_URL}/rooms/${code}`);
+                    const data = await res.json();
+                    if (data.status === 'ok') {
+                        window.location.href = `room.html?room=${code}&user=${encodeURIComponent(name)}`;
+                    } else {
+                        alert("Room not found!");
+                    }
+                } catch (err) {
+                    alert("Failed to connect to backend.");
+                }
+            } else {
+                alert("Please enter a valid 6-digit code and your name.");
+            }
+        });
+    </script>
+</body>
+</html>

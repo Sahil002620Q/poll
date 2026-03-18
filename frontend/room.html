@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votee - Live Room</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Live Room</h1>
+            <p>You are in room: <strong id="display-room-code"></strong> as <strong id="display-username"></strong></p>
+        </header>
+
+        <div class="dash-grid">
+            <!-- Left Column: Voting -->
+            <div class="card">
+                <h2 class="section-title">Current Poll</h2>
+                
+                <div id="waiting-msg" style="text-align:center; color: var(--text-muted); margin-top:2rem;">
+                    Waiting for the host to start a poll...
+                </div>
+
+                <div id="vote-section" class="hidden">
+                    <h3 id="poll-question" class="mb-1" style="font-size: 1.5rem;"></h3>
+                    <div class="timer" id="poll-timer">15</div>
+                    <div id="options-container" style="display:flex; flex-direction:column; gap:0.5rem;"></div>
+                    <div id="vote-feedback" class="hidden mt-1" style="color:var(--success); font-weight:bold; text-align:center;">
+                        Vote submitted! Waiting for results...
+                    </div>
+                </div>
+
+                <div id="results-section" class="hidden mt-1">
+                    <h3 id="res-poll-question" class="mb-1" style="font-size: 1.5rem;"></h3>
+                    <div id="results-header-text" style="color:var(--secondary); font-weight:bold; text-align:center; margin-bottom:1rem;">Poll Ended</div>
+                    <div id="results-container"></div>
+                </div>
+            </div>
+
+            <!-- Right Column: Chat -->
+            <div class="card">
+                <h2 class="section-title">Live Chat</h2>
+                
+                <div id="chat-disabled-msg" class="hidden" style="text-align:center; color: var(--danger); margin-bottom:1rem;">
+                    Chat has been disabled by the host.
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="chat-msg" style="text-align:center; color: var(--text-muted); background:none;"><i>Welcome to the chat!</i></div>
+                    </div>
+                    <div class="chat-input" id="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Type a message...">
+                        <button id="btn-send-chat" class="btn primary btn-small">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/room.js"></script>
+</body>
+</html>

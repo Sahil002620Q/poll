@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votee - Host Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Host Dashboard</h1>
+            <p>Share this code with your audience to join.</p>
+            <div class="code-display" id="room-code-display">------</div>
+        </header>
+
+        <div class="dash-grid">
+            <!-- Left Column: Poll Management & Results -->
+            <div class="card">
+                <div class="flex-between mb-1">
+                    <h2 class="section-title" style="border:none; margin:0;">Poll Controls</h2>
+                    <span id="poll-status" class="poll-status-badge inactive">Inactive</span>
+                </div>
+
+                <!-- Create Poll Form -->
+                <div id="create-poll-section">
+                    <div class="option-input-group">
+                        <input type="text" id="poll-question" placeholder="Enter your question here..." required>
+                        <input type="text" class="opt-input" placeholder="Option 1" required>
+                        <input type="text" class="opt-input" placeholder="Option 2" required>
+                        <input type="text" class="opt-input" placeholder="Option 3 (optional)">
+                        <input type="text" class="opt-input" placeholder="Option 4 (optional)">
+                        <div style="display:flex; gap: 1rem; align-items: center;">
+                            <label style="display:flex; gap:0.5rem; align-items:center;">
+                                <input type="checkbox" id="enable-timer" checked style="width:auto;"> Enable Timer
+                            </label>
+                            <label for="poll-time" id="poll-time-label">Time (minutes):</label>
+                            <input type="number" id="poll-time" value="1" min="1" max="60" style="width:100px;">
+                        </div>
+                    </div>
+                    <button id="btn-create-poll" class="btn primary">Create Poll</button>
+                </div>
+
+                <!-- Active Poll / Results Section -->
+                <div id="results-section" class="hidden mt-1">
+                    <h3 id="display-question" class="mb-1"></h3>
+                    <div class="timer" id="display-timer"></div>
+                    
+                    <div id="results-container"></div>
+                    
+                    <button id="btn-start-poll" class="btn success mt-1">Start Poll</button>
+                    <button id="btn-end-poll" class="btn danger mt-1 hidden">End Poll</button>
+                    <button id="btn-new-poll" class="btn secondary mt-1 hidden">Create New Poll</button>
+                </div>
+            </div>
+
+            <!-- Right Column: Chat -->
+            <div class="card">
+                <div class="flex-between mb-1">
+                    <h2 class="section-title" style="border:none; margin:0;">Live Chat</h2>
+                    <label style="font-size: 0.9rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="checkbox" id="toggle-chat" checked style="width:auto;"> Enable
+                    </label>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="chat-msg" style="text-align:center; color: var(--text-muted); background:none;"><i>Chat room started...</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/host.js"></script>
+</body>
+</html>
