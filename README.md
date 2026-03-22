@@ -5,7 +5,10 @@ A simple web-based polling application built as a beginner-friendly project to u
 <br>
 <!-- <button onclick="window.location.href='https://poll-l6lc.onrender.com/'">View</button> -->
 <a href="https://poll-l6lc.onrender.com/">View</a>
-
+<!-- <image src="https://poll-l6lc.onrender.com/"> -->
+<!-- <p align="center">
+  <img src="" width="200" alt="QR Code">
+</p> -->
 
 
 ## 📌 Overview
