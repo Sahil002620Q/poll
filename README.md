@@ -72,7 +72,7 @@ It is being developed step-by-step, starting from basic frontend and gradually i
 
 ---
 
-## ⚙️ How to Run
+## ⚙️ How to Run on Local device
 
 1. Clone the repository:
 
