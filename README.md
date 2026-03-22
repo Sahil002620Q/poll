@@ -3,8 +3,8 @@
 
 A simple web-based polling application built as a beginner-friendly project to understand full-stack fundamentals.
 <br>
-<button onclick="window.location.href='https://poll-l6lc.onrender.com/'">View</button>
-
+<!-- <button onclick="window.location.href='https://poll-l6lc.onrender.com/'">View</button> -->
+<a href="https://poll-l6lc.onrender.com/">View</a>
 
 
 
