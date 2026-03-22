@@ -48,9 +48,7 @@ It is being developed step-by-step, starting from basic frontend and gradually i
 ```
 .
 ├── backend
-│   ├── error.log
 │   ├── main.py
-│   ├── __pycache__
 │   │   └── main.cpython-314.pyc
 │   └── requirements.txt
 ├── frontend
