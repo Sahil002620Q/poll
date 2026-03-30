@@ -4,7 +4,7 @@
 A simple web-based polling application built as a beginner-friendly project to understand full-stack fundamentals.
 <br>
 <!-- <button onclick="window.location.href='https://poll-l6lc.onrender.com/'">View</button> -->
-<a href="https://poll-l6lc.onrender.com/">View</a>
+<a href="https://poll-l6lc.onrender.com/">View in web</a>
 <!-- <image src="https://poll-l6lc.onrender.com/"> -->
 <!-- <p align="center">
   <img src="" width="200" alt="QR Code">
